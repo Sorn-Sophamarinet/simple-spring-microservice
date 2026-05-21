@@ -23,7 +23,7 @@ RUN apt-get update \
 COPY --from=builder /app/build/libs/*.jar app.jar
 
 # Expose the application's port
-EXPOSE 8383
+EXPOSE 8081
 
 # Run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]

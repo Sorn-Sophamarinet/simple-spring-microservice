@@ -20,7 +20,7 @@ This workspace is prepared as a Spring Cloud microservice stack with the service
 
 - `8888` config server
 - `8761` Eureka dashboard
-- `8383` product service
+- `8081` product service
 - `8282` API gateway
 - `5434` PostgreSQL mapped from the container's `5432`
 
