@@ -37,3 +37,17 @@ dependencyManagement {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+tasks.named('processResources') {
+    def siblingConfigRepo = file('../config-repo')
+    def localConfigRepo = file('config-repo')
+    def selectedConfigRepo = siblingConfigRepo.exists() ? siblingConfigRepo : localConfigRepo
+
+    if (!selectedConfigRepo.exists()) {
+        throw new GradleException("Config repo not found. Expected ../config-repo or config-repo")
+    }
+
+    from(selectedConfigRepo) {
+        into 'config-repo'
+    }
+}
