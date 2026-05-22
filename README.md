@@ -7,7 +7,14 @@ This workspace is prepared as a Spring Cloud microservice stack with the service
 - `product-service`
 - `api-gateway`
 
-`user-service` is still in the repository, but it is not required for the deployment stack.
+<img src="./Service-depend_on.png" alt="Service_depend_on" />
+
+### Dependencies
+
+- **config-server** depends on: *none*
+- **eureka-server** depends on: ["config-server"]
+- **product-service** depends on: ["config-server", "eureka-server"]
+- **api-gateway** depends on: ["config-server", "eureka-server", "product-service"]
 
 ## Architecture
 
