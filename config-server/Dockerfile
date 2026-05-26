@@ -1,9 +1,9 @@
 FROM gradle:8.5-jdk21 AS builder
 WORKDIR /app
 
-COPY config-server/build.gradle ./build.gradle
-COPY config-server/settings.gradle ./settings.gradle
-COPY config-server/src ./src
+COPY build.gradle ./
+COPY settings.gradle ./
+COPY src ./src
 COPY config-repo ./config-repo
 
 RUN gradle clean build --no-daemon -x test --refresh-dependencies
@@ -13,7 +13,7 @@ WORKDIR /app
 
 RUN apt-get update \
     && apt-get install -y curl \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/*p
 
 COPY --from=builder /app/build/libs/*.jar app.jar
 
