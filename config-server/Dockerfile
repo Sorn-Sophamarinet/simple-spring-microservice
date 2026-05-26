@@ -6,7 +6,7 @@ COPY settings.gradle ./
 COPY src ./src
 COPY config-repo ./config-repo
 
-RUN gradle build --no-daemon -x test
+RUN gradle clean build --no-daemon -x test --refresh-dependencies
 
 FROM eclipse-temurin:21-jdk
 WORKDIR /app
