@@ -18,12 +18,12 @@ repositories {
 }
 
 ext {
-    set('springCloudVersion', "2025.0.3")
+    set('springCloudVersion', "2025.0.2")
     set('tomcat.version', "10.1.55")
 }
 
 dependencies {
-    implementation 'org.springframework.cloud:spring-cloud-config-server'
+    implementation 'org.springframework.cloud:spring-cloud-config-server:4.3.3'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
