@@ -1,4 +1,4 @@
-package dev.sample.productservice.serviceImpl;
+package dev.sample.productservice.service.serviceImpl;
 
 import dev.sample.productservice.dto.ProductRequest;
 import dev.sample.productservice.dto.ProductResponse;
